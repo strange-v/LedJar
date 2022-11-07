@@ -1,1 +1,3 @@
 # LedJar
+
+![Schematic](schematic.png)
