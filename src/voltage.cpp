@@ -10,15 +10,6 @@ void loopUndervoltageProtection()
         lastUndervoltageCheckTime = ms;
         checkForUndervoltage();
     }
-    
-    // if (undervoltage && !needCheckUndervoltage)
-    // {
-    //     digitalWrite(3, !digitalRead(3));
-    //     wdt_disable();
-    //     setupExternalInterrupt();
-    //     sleepMcu();
-    //     wdt_enable(WDTO_8S);
-    // }
 }
 
 void checkForUndervoltage()
@@ -27,7 +18,7 @@ void checkForUndervoltage()
     delay(10);
     uint16_t voltage = vcc.getValue_mV();
     turnAdcOff();
-    // digitalWrite(3, !digitalRead(3));
+    
     undervoltage = voltage <= VOLTAGE_MIN;
     if (undervoltage)
     {
